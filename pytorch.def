@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%files
+    requirements.txt /
+
+%post
+    apt -y update
+    apt -y upgrade
+    apt -y install wget nano build-essential zip unzip
+    apt -y install libsm6 libxext6 libxrender-dev libglib2.0-0 libgl1-mesa-dev # For OpenCV
+    apt -y install python3.6 python3-pip
+    python3 -m pip install --upgrade pip
+    pip install -r /requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
+
+%environment
+    export LC_ALL=C
+

@@ -1,0 +1,12 @@
+# Ignore folders
+pretrained*
+tblog*
+VOC2012*
+data/*
+
+# Ignore singularity image files
+*.sif
+
+# Ignore pycache
+*__pycache__*
+*.pyc
